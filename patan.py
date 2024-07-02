@@ -3,7 +3,6 @@ import pandas as pd
 from dotenv import load_dotenv
 import os
 load_dotenv()
-
 # print(type(host))
 dbconn = MySQL.connect(
     host = os.getenv("DB_HOST"),
@@ -16,7 +15,7 @@ if(cursor):
     print("connected")
 free = pd.read_excel("Fins.xlsx", index_col=0)
 farmishes = pd.DataFrame(free).head().all()
-print(farmishes)
+# print(farmishes)
 for farmish in range(len(farmishes)):
     famich = farmish + 1
     print(farmishes.iloc[0])
